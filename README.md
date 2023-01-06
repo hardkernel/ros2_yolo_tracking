@@ -1,6 +1,20 @@
 # yolo_tracking
 
-it is ros2-foxy pkg on ODROID-M1.
+This is a ros2 example on odroid-M1 of detecting and tracking a "cell phone" using a camera and a yolov5 model.
+
+It transmits the coordinates of the object detected as "topic",
+
+compares the transmitted coordinate value with the coordinate in the center,
+
+and communicates the motor control signal through the "service".
+
+We think it is very meaningful that this project uses NPU together in the ros2 package.
+
+TODO:
+```
+The target ("mobile phone") is now hard-coded,
+but will remain at its default value and will be improved so that the user can switch to parameter input.
+```
 
 ### Purchase list
 ---------------------------------------
@@ -36,14 +50,19 @@ GRD --- phy #9
 
 ### manual
 ---------------------------------------
-[WARN] Camera screen flips and motor control direction must be adjusted personally!
+0. update & upgrade kernel
+```
+$ sudo apt update && sudo apt upgrade -y
+# Linux weston 4.19.219-odroid-arm64 #1 SMP Fri, 06 Jan 2023 05:51:03 +0000 aarch64 aarch64 aarch64 GNU/Linux
+```
 
+[WARN] Camera screen flips and motor control direction must be adjusted personally!
 - [Camera screen setting](doc/camera_screen_setting.rst)
 - [Motor direction setting](doc/motor_direction_setting.rst)
 
 1. Download & Build package.
 ```
-$ git clone https://github.com/how2flow/ros2_yolo_tracking yolo_tracking
+$ git clone https://github.com/hardkernel/ros2_yolo_tracking yolo_tracking
 $ ln -s ~/ros2_yolo_tracking/motor_srv ~/robot_ws/src
 $ ln -s ~/ros2_yolo_tracking ~/robot_ws/src/yolo_tracking
 $ cb

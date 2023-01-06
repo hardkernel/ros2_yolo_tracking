@@ -18,3 +18,5 @@ path: src/servo/servo.cpp
   }
 
 Change +/- operators on line 1 and line 2 to each other
+
+motor y can be changed direction in the same way.
