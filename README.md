@@ -84,3 +84,7 @@ $ ros2 run yolo_tracking servo
 ```
 $ ros2 run yolo_tracking control
 ```
+
+### Youtube
+
+[![Video Label](http://img.youtube.com/vi/EacS0KszQZQ/0.jpg)](https://youtu.be/EacS0KszQZQ)
